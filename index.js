@@ -23,3 +23,20 @@ app.get(`/reservar`, (req, res) => {
 app.listen(3000, () => {
     console.log(`El servidor se inició correctamente en el puerto 3000: http://localhost:3000`);
 });
+
+const conexion = mysql.createPool({
+    host: `localhost`,
+    user: `root`,
+    password: ``,
+    database: `hotel`
+});
+
+(async () => {
+    try {
+        const conn = await conexion.getConnection();
+        console.log('✅ Conexión exitosa a MySQL');
+        conn.release(); // libera la conexión al pool
+    } catch (err) {
+        console.error('❌ Error en la conexión:', err.message);
+    }
+})();
