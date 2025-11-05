@@ -228,3 +228,37 @@ body.d-flex.flex-column {
     outline: none;
     box-shadow: none;
 }
+
+@media (max-width: 1500px) {
+
+    .formulario-reserva {
+        max-width: 70%;
+    }
+}
+
+
+@media (max-width: 769px) {
+
+    .indexH1 {
+        font-size: 3.5rem;
+    }
+
+    .indexP {
+        font-size: 1.1rem;
+    }
+
+    .header-reserva h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .header-reserva h2 {
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 0 3rem 0 3rem;
+    }
+
+    .formulario-reserva {
+        max-width: 90%;
+    }
+}
