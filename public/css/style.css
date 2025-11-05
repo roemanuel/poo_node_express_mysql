@@ -1,0 +1,230 @@
+/* =====================================================
+   GENERAL
+===================================================== */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+.navbar {
+    background-color: #EEEFF0;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #E1A43B;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:active,
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+    color: #E1A43B;
+    text-decoration: none;
+    background: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-reservar {
+    color: white;
+    background-color: #E1A43B;
+    border-color: #E1A43B;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.btn-reservar:hover,
+.btn-reservar:focus,
+.btn-reservar:active {
+    color: white !important;
+    background-color: #E1A43B !important;
+    border-color: #E1A43B !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* =====================================================
+   INICIO (INDEX.EJS)
+===================================================== */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body.d-flex.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-grow-1 {
+    flex: 1 1 auto;
+}
+
+.card.text-bg-dark {
+    height: 100%;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%);
+}
+
+.card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 4.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.btn-inicio {
+    color: white !important;
+    background-color: #E1A43B !important;
+    border-color: #E1A43B !important;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.15rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+}
+
+.btn-inicio:hover,
+.btn-inicio:focus,
+.btn-inicio:active {
+    color: white !important;
+    background-color: #E1A43B !important;
+    border-color: #E1A43B !important;
+    outline: none;
+    box-shadow: none;
+}
+
+/* =====================================================
+   RESERVAR (RESERVAR.EJS)
+===================================================== */
+.header-reserva {
+    background-color: #E1A43B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 18rem;
+}
+
+.header-reserva h1,
+.header-reserva h2 {
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+
+.header-reserva h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.header-reserva h2 {
+    font-size: 1.5rem;
+}
+
+.form-section {
+    display: flex;
+    background-color: #F8F8F6;
+    justify-content: center;
+    padding: 5rem 0;
+}
+
+.formulario-reserva {
+    max-width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem 2rem 4rem 2rem;
+}
+
+.formulario-reserva h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+/* INPUTS Y SELECT */
+.form-control,
+.form-select {
+    background-color: #F8F8F6 !important;
+    border-radius: 10px !important;
+    border: 1px solid #CCCCCC !important;
+    /* borde siempre visible */
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+.form-control:hover,
+.form-control:focus,
+.form-control:active,
+.form-control:focus-visible,
+.form-select:hover,
+.form-select:focus,
+.form-select:active,
+.form-select:focus-visible {
+    background-color: #F8F8F6 !important;
+    border: 1px solid #CCCCCC !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* BOTÓN CONFIRMAR */
+.btn-confirmar {
+    background-color: #E1A43B !important;
+    color: white !important;
+    width: 100%;
+    padding: 0.8rem 0;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.btn-confirmar:hover,
+.btn-confirmar:focus,
+.btn-confirmar:active {
+    background-color: #E1A43B !important;
+    color: white !important;
+    border-color: #E1A43B !important;
+    outline: none;
+    box-shadow: none;
+}
