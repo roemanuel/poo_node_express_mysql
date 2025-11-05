@@ -8,14 +8,87 @@
     <title>Nexo Hotel - Reservar</title>
 </head>
 
-<body class="d-flex flex-column" style="height: 100vh; margin: 0;">
+<body class="d-flex flex-column" style="margin: 0" ;>
 
     <%- include(`partials/navbar`) %>
 
-    <div style="background-color: #E1A43B;">
-        <h1 class="text-white" style="font-family: 'Playfair Display', serif;">Reserva tu estancia</h1>
-        <h2 class="text-white" style="font-family: 'Playfair Display', serif;">Completa el formulario para garantizar tu habitación</h2>
-    </div>
+        <div
+            style="background-color: #E1A43B; display: flex; flex-direction: column; align-items: center; place-content: center; height: 18rem;">
+            <h1 class="text-white fw-bold" style="font-family: 'Playfair Display', serif; font-size: 5rem;">Reserva tu
+                estancia</h1>
+            <h2 class="text-white" style="font-family: 'Playfair Display', serif; font-size: 1.5rem;">Completa el
+                formulario para garantizar tu habitación</h2>
+        </div>
+
+        <div
+            style="display: flex; background-color: #F8F8F6; justify-content: center; padding-top: 5rem; padding-bottom: 5rem;">
+            <form class="row g-3"
+                style="max-width: 40%; background-color: white; border-radius: 10px; padding: 2rem 2rem 4rem 2rem;"
+                action="/registrarReserva" method="post">
+                <h3 class="fw-bold" style="font-family: 'Playfair Display', serif;">Datos de la reserva</h3>
+                <div class="col-md-6">
+                    <label class="form-label" for="fechaLlegada">Fecha de llegada</label>
+                    <input type="date" class="form-control" name="fechaLlegada"
+                        style="background-color: #F8F8F6; border-radius: 10px;" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="fechaSalida">Fecha de salida</label>
+                    <input type="date" class="form-control" name="fechaSalida"
+                        style="background-color: #F8F8F6; border-radius: 10px;" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="tipoHabitacion">Tipo de habitación</label>
+                    <select class="form-select" name="tipoHabitacion"
+                        style="background-color: #F8F8F6; border-radius: 10px;" required>
+                        <option>Seleccionar</option>
+                        <option>Individual ($50.000 por noche)</option>
+                        <option>Doble ($100.000 por noche)</option>
+                        <option>Suite ($250.000 por noche)</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="cantidadPersonas">Cantidad de personas</label>
+                    <select name="cantidadPersonas" class="form-select"
+                        style="background-color: #F8F8F6; border-radius: 10px;" required>
+                        <option>Seleccionar</option>
+                        <option>1 persona</option>
+                        <option>2 personas</option>
+                        <option>3 personas</option>
+                        <option>4 personas</option>
+                    </select>
+                </div>
+
+                <h3 class="fw-bold mt-5" style="font-family: 'Playfair Display', serif;">Datos del huésped</h3>
+
+                <div class="col-12">
+                    <label class="form-label" for="nombreCliente">Nombre/s</label>
+                    <input type="text" class="form-control" name="nombreCliente"
+                        style="background-color: #F8F8F6; border-radius: 10px;" required>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="apellidoCliente">Apellido/s</label>
+                    <input type="text" class="form-control" name="apellidoCliente"
+                        style="background-color: #F8F8F6; border-radius: 10px;" required>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="dniCliente">DNI</label>
+                    <input type="text" class="form-control" name="dniCliente"
+                        style="background-color: #F8F8F6; border-radius: 10px;" required>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label" for="correoCliente">Correo electrónico</label>
+                    <input type="email" class="form-control" name="correoCliente"
+                        style="background-color: #F8F8F6; border-radius: 10px;" required>
+
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn text-white fw-bold mt-3"
+                        style="background-color: #E1A43B; width: 100%; padding: 0.8rem 0; border-radius: 10px;">Confirmar
+                        reserva</button>
+                </div>
+            </form>
+        </div>
 
 </body>
 
