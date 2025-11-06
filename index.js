@@ -68,7 +68,7 @@ app.post('/consultarReserva', async (req, res) => {
 
         resultados = resultados[0][0];
 
-        if (resultados.dniCliente) {
+        if (resultados && resultados.dniCliente) {
             res.json({ exito: true, info: resultados });
         } else {
             res.json({ exito: false });
