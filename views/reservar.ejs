@@ -20,23 +20,23 @@
         </div>
 
         <div class="form-section">
-            <form class="row g-3 formulario-reserva" action="/registrarReserva" method="post">
+            <form class="row g-3 formulario-reserva" id="formularioReserva">
 
                 <h3>Datos de la reserva</h3>
 
                 <div class="col-md-6">
                     <label class="form-label" for="fechaLlegada">Fecha de llegada</label>
-                    <input type="date" class="form-control" name="fechaLlegada" required>
+                    <input type="date" class="form-control" name="fechaLlegada" id="fechaLlegada" required>
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label" for="fechaSalida">Fecha de salida</label>
-                    <input type="date" class="form-control" name="fechaSalida" required>
+                    <input type="date" class="form-control" id="fechaSalida" required>
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label" for="tipoHabitacion">Tipo de habitación</label>
-                    <select class="form-select" name="tipoHabitacion" required>
+                    <select class="form-select" id="tipoHabitacion" required>
                         <option>Seleccionar</option>
                         <option>Individual ($50.000 por noche)</option>
                         <option>Doble ($100.000 por noche)</option>
@@ -46,7 +46,7 @@
 
                 <div class="col-md-6">
                     <label class="form-label" for="cantidadPersonas">Cantidad de personas</label>
-                    <select name="cantidadPersonas" class="form-select" required>
+                    <select id="cantidadPersonas" class="form-select" required>
                         <option>Seleccionar</option>
                         <option>1 persona</option>
                         <option>2 personas</option>
@@ -59,22 +59,22 @@
 
                 <div class="col-12">
                     <label class="form-label" for="nombreCliente">Nombre/s</label>
-                    <input type="text" class="form-control" name="nombreCliente" required>
+                    <input type="text" class="form-control" id="nombreCliente" required>
                 </div>
 
                 <div class="col-12">
                     <label class="form-label" for="apellidoCliente">Apellido/s</label>
-                    <input type="text" class="form-control" name="apellidoCliente" required>
+                    <input type="text" class="form-control" id="apellidoCliente" required>
                 </div>
 
                 <div class="col-12">
                     <label class="form-label" for="dniCliente">DNI</label>
-                    <input type="text" class="form-control" name="dniCliente" required>
+                    <input type="text" class="form-control" id="dniCliente" required>
                 </div>
 
                 <div class="col-12">
                     <label class="form-label" for="correoCliente">Correo electrónico</label>
-                    <input type="email" class="form-control" name="correoCliente" required>
+                    <input type="email" class="form-control" id="correoCliente" required>
                 </div>
 
                 <div class="col-12">
@@ -84,7 +84,27 @@
             </form>
         </div>
 
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel"><b>Estado de tu reserva</b></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body" id="modal-body-content">
+                        <!-- Aquí se inyectará el contenido dinámico -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn botonModal" data-bs-dismiss="modal"><b>Cerrar</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/reservar.js"></script>
 </body>
 
 </html>

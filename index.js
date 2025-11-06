@@ -74,8 +74,7 @@ app.post('/registrarReserva', async (req, res) => {
 
         await conexion.query(sql, [req.body.fechaLlegada, req.body.fechaSalida, req.body.tipoHabitacion, req.body.cantidadPersonas, req.body.nombreCliente, req.body.apellidoCliente, req.body.dniCliente, req.body.correoCliente]);
 
-        console.log('✅ Reserva registrada correctamente');
-        res.redirect('/reservar');
+        res.json({ exito: true });
     } catch (err) {
         console.error('❌ Error al registrar la reserva:', err);
     }
