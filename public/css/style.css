@@ -272,10 +272,40 @@ body.d-flex.flex-column {
     text-align: center;
 }
 
+.divTablaDashboard {
+    width: 80%;
+    align-self: center;
+}
+
+table, th {
+    text-align: center;
+    align-content: center;
+    
+}
+
+td {
+    align-content: center;
+}
+
+.accionesTabla {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+
+}
+
+.accionesTabla i {
+    font-size: 1.1rem;
+}
+
 @media (max-width: 1500px) {
 
     .formulario-reserva {
         max-width: 70%;
+    }
+
+    .divTablaDashboard {
+        width: 90%;
     }
 }
 
