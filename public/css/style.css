@@ -41,6 +41,17 @@ body {
     box-shadow: none;
 }
 
+.btn-inicio-navbar {
+    color: white;
+    background-color: #E1A43B;
+    border-color: #E1A43B;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
 .btn-reservar {
     color: white;
     background-color: #E1A43B;
@@ -52,12 +63,32 @@ body {
     text-decoration: none;
 }
 
+.btn-administradores {
+    color: white;
+    background-color: #E1A43B;
+    border-color: #E1A43B;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.btn-inicio-navbar:hover,
+.btn-inicio-navbar:focus,
+.btn-inicio-navbar:active,
 .btn-reservar:hover,
 .btn-reservar:focus,
-.btn-reservar:active {
+.btn-reservar:active,
+.btn-administradores:hover,
+.btn-administradores:focus,
+.btn-administradores:active,
+.btn-inicio:hover,
+.btn-inicio:focus,
+.btn-inicio:active {
     color: white !important;
-    background-color: #E1A43B !important;
-    border-color: #E1A43B !important;
+    background-color: #ac7b28 !important;
+    border-color: #ac7b28 !important;
     outline: none !important;
     box-shadow: none !important;
 }
@@ -121,16 +152,6 @@ body.d-flex.flex-column {
     margin-top: 0.5rem;
 }
 
-.btn-inicio:hover,
-.btn-inicio:focus,
-.btn-inicio:active {
-    color: white !important;
-    background-color: #E1A43B !important;
-    border-color: #E1A43B !important;
-    outline: none;
-    box-shadow: none;
-}
-
 /* =====================================================
    RESERVAR (RESERVAR.EJS)
 ===================================================== */
@@ -163,13 +184,15 @@ body.d-flex.flex-column {
     background-color: #F8F8F6;
     justify-content: center;
     padding: 5rem 0;
+    height: 100vh;
 }
 
 .formulario-reserva {
-    max-width: 40%;
+    max-width: 35%;
     background-color: white;
     border-radius: 10px;
     padding: 2rem 2rem 4rem 2rem;
+    height: max-content;
 }
 
 .formulario-reserva h3 {
@@ -221,12 +244,28 @@ body.d-flex.flex-column {
 
 .btn-confirmar:hover,
 .btn-confirmar:focus,
-.btn-confirmar:active {
-    background-color: #E1A43B !important;
+.btn-confirmar:active,
+.botonModal:hover,
+.botonModal:focus,
+.botonModal:active {
+    background-color: #ac7b28 !important;
     color: white !important;
-    border-color: #E1A43B !important;
+    border-color: #ac7b28 !important;
     outline: none;
     box-shadow: none;
+}
+
+.botonModal {
+    background-color: #E1A43B;
+    color: white;
+}
+
+.modal-header {
+    color: #E1A43B;
+}
+
+#staticBackdropLabel {
+    font-family: 'Playfair Display', serif;
 }
 
 @media (max-width: 1500px) {
@@ -235,7 +274,6 @@ body.d-flex.flex-column {
         max-width: 70%;
     }
 }
-
 
 @media (max-width: 769px) {
 
@@ -260,5 +298,16 @@ body.d-flex.flex-column {
 
     .formulario-reserva {
         max-width: 90%;
+    }
+
+    .formulario-reserva {
+        max-width: 90%;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
     }
 }

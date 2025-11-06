@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Nexo Hotel - Reservar</title>
+</head>
+
+<body class="d-flex flex-column">
+
+    <%- include('partials/navbar') %>
+
+        <div class="header-reserva">
+            <h1 class="reservarH1">Verifica tu reserva</h1>
+            <h2 class="reservarH1">Consulta si tu reserva se ha registrado correctamente</h2>
+        </div>
+
+        <div class="form-section">
+            <form class="row g-3 formulario-reserva" id="formReserva">
+
+                <h3>Ingrese su DNI</h3>
+
+                <div class="col-12">
+                    <label class="form-label" for="dniCliente">DNI</label>
+                    <input class="form-control" type="text" aria-label="default input example" name="dniCliente"
+                        id="dniCliente">
+                    <div class="form-text">Introducir solo números sin puntos ni espacios</div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-confirmar">Consultar reserva</button>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel"><b>Datos de tu reserva</b></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body" id="modal-body-content">
+                        <!-- Aquí se inyectará el contenido dinámico -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn botonModal" data-bs-dismiss="modal"><b>Cerrar</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/verificarReserva.js"></script>
+</body>
+
+</html>
