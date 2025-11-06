@@ -45,21 +45,24 @@ app.get('/verificarReserva', (req, res) => {
     res.render('verificarReserva');
 });
 
+// Ruta POST para consultar una reserva
 app.post('/consultarReserva', async (req, res) => {
     try {
+
         const { dniCliente } = req.body;
 
-        // Consulta segura
         let resultados = await conexion.query('SELECT * FROM reservas WHERE dniCliente = ?', [dniCliente]);
 
         resultados = resultados[0][0];
 
-        // Enviamos al frontend sin cambiar de página
-        res.json({ exito: true, info: resultados });
+        if (resultados.dniCliente) {
+            res.json({ exito: true, info: resultados });
+        } else {
+            res.json({ exito: false });
+        }
 
     } catch (err) {
-        console.error('❌ Error al consultar la reserva:', err);
-        res.status(500).json({ exito: false, mensaje: 'Error al consultar la reserva' });
+        console.error(`❌ Error al consultar la reserva: ${err}`);
     }
 });
 

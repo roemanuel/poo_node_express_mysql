@@ -10,7 +10,6 @@ document.getElementById('formReserva').addEventListener('submit', async (e) => {
 
     const rtaServidor = await res.json();
 
-    // 🔹 Obtenemos el cuerpo del modal y la instancia
     const modalBody = document.querySelector('#staticBackdrop .modal-body');
     const modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
 
@@ -30,9 +29,10 @@ document.getElementById('formReserva').addEventListener('submit', async (e) => {
                                 </div>
                             `;
     } else {
-        modalBody.innerHTML = `<div class="alert alert-danger mt-3">❌ No se encontró ninguna reserva con ese DNI.</div>`;
+        modalBody.innerHTML = `
+                                <div class="alert alert-danger mt-3">No se encontró ninguna reserva con ese DNI</div>
+                             `;
     }
 
-    // 🔹 Mostramos el modal automáticamente
     modal.show();
 });
