@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Nexo Hotel - Iniciar sesión</title>
+</head>
+
+<body class="d-flex flex-column">
+
+    <%- include('partials/navbar') %>
+
+        <div class="header-reserva">
+            <h1 class="reservarH1">Inicia sesión</h1>
+            <h2 class="reservarH1">Inicio de sesión para el personal del hotel</h2>
+        </div>
+
+        <div class="form-section">
+            <form class="row g-3 formulario-reserva" id="formInicioSesion">
+                <h3>Datos del administrador</h3>
+                <div class="col-12">
+                    <label class="form-label" for="correoAdministrador">Correo electrónico</label>
+                    <input type="email" class="form-control" id="correoAdministrador" required>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="passwordAdministrador">Contraseña</label>
+                    <input type="password" class="form-control" id="passwordAdministrador" required>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-confirmar">Iniciar sesión</button>
+                </div>
+            </form>
+        </div>
+
+        <%- include('partials/modalIniciarSesion') %>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="js/iniciarSesion.js"></script>
+</body>
+
+</html>

@@ -41,6 +41,19 @@ app.get('/reservar', (req, res) => {
     res.render('reservar');
 });
 
+// Ruta POST para registrar una reserva
+app.post('/registrarReserva', async (req, res) => {
+    try {
+        const sql = `INSERT INTO reservas (fechaLlegada, fechaSalida, tipoHabitacion, cantidadPersonas, nombreCliente, apellidoCliente, dniCliente, correoCliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+
+        await conexion.query(sql, [req.body.fechaLlegada, req.body.fechaSalida, req.body.tipoHabitacion, req.body.cantidadPersonas, req.body.nombreCliente, req.body.apellidoCliente, req.body.dniCliente, req.body.correoCliente]);
+
+        res.json({ exito: true });
+    } catch (err) {
+        console.error('❌ Error al registrar la reserva:', err);
+    }
+});
+
 app.get('/verificarReserva', (req, res) => {
     res.render('verificarReserva');
 });
@@ -66,18 +79,33 @@ app.post('/consultarReserva', async (req, res) => {
     }
 });
 
+app.get('/iniciarSesion', (req, res) => {
+    res.render('iniciarSesion');
+});
 
-// Ruta POST para registrar una reserva
-app.post('/registrarReserva', async (req, res) => {
+app.post(`/consultarAdministrador`, async (req, res) => {
     try {
-        const sql = `INSERT INTO reservas (fechaLlegada, fechaSalida, tipoHabitacion, cantidadPersonas, nombreCliente, apellidoCliente, dniCliente, correoCliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
-        await conexion.query(sql, [req.body.fechaLlegada, req.body.fechaSalida, req.body.tipoHabitacion, req.body.cantidadPersonas, req.body.nombreCliente, req.body.apellidoCliente, req.body.dniCliente, req.body.correoCliente]);
+        const { correoAdministrador, passwordAdministrador } = req.body;
 
-        res.json({ exito: true });
-    } catch (err) {
-        console.error('❌ Error al registrar la reserva:', err);
+        let respuestaBD = await conexion.query('SELECT * FROM administradores WHERE correoAdministrador = ? AND passwordAdministrador = ?', [correoAdministrador, passwordAdministrador]);
+
+        respuestaBD = respuestaBD[0][0];
+
+        if (respuestaBD && respuestaBD.correoAdministrador == correoAdministrador && respuestaBD.passwordAdministrador == passwordAdministrador) {
+            res.json({ exito: true });
+        } else {
+            res.json({ exito: false });
+        }
+
     }
+    catch (err) {
+        console.error(`Error en consultarAdministrador ${err}`);
+    }
+});
+
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard');
 });
 
 // Inicio el servidor en el puerto 3000
