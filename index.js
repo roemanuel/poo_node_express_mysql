@@ -108,6 +108,53 @@ app.get('/dashboard', (req, res) => {
     res.render('dashboard');
 });
 
+app.get(`/datosDashboard`, async (req, res) => {
+    try {
+
+        let respuestaBD = await conexion.query('SELECT * FROM reservas');
+
+        if (respuestaBD) {
+            res.json({ exito: true, info: respuestaBD[0] });
+        } else {
+            res.json({ exito: false });
+        }
+
+    }
+    catch (err) {
+        console.error(`Error en datosDashboard ${err}`);
+    }
+});
+
+app.post(`/nuevosDatos`, async (req, res) => {
+    try {
+
+        const { numeroSolicitud, fechaLlegada, fechaSalida, tipoHabitacion, cantidadPersonas, nombreCliente, apellidoCliente, dniCliente, correoCliente, estadoReserva } = req.body;
+
+        await conexion.query("UPDATE reservas SET fechaLlegada = ?, fechaSalida = ?, tipoHabitacion = ?, cantidadPersonas = ?, nombreCliente = ?, apellidoCliente = ?, dniCliente = ?, correoCliente = ?, estadoReserva = ? WHERE id = ?", [fechaLlegada, fechaSalida, tipoHabitacion, cantidadPersonas, nombreCliente, apellidoCliente, dniCliente, correoCliente, estadoReserva, numeroSolicitud]);
+
+        res.json({ exito: true });
+
+    }
+    catch (err) {
+        console.error(`Error en nuevosDatos ${err}`);
+    }
+});
+
+app.post(`/eliminarDatos`, async (req, res) => {
+    try {
+
+        const { id } = req.body;
+
+        await conexion.query("DELETE FROM reservas WHERE id = ?", [id]);
+
+        res.json({ exito: true });
+
+    }
+    catch (err) {
+        console.error(`Error en eliminarDatos ${err}`);
+    }
+});
+
 // Inicio el servidor en el puerto 3000
 app.listen(3000, () => {
     console.log('Servidor iniciado en http://localhost:3000');

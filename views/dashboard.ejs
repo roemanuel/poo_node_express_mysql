@@ -21,7 +21,7 @@
         </div>
 
         <div class="mt-5 table-responsive-xxl divTablaDashboard">
-            <table class="table table-hover">
+            <table class="table table-hover align-middle">
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Número de solicitud</th>
@@ -37,28 +37,16 @@
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
-                <tbody class="table-group-divider">
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td class="accionesTabla">
-                            <i class="bi bi-pencil"></i>
-                            <i class="bi bi-x-lg"></i>
-                        </td>
-                    </tr>
+                <tbody class="table-group-divider datosBD">
+                <%# Acá se ponen los datos de forma dinámica traidos de la BD %>
                 </tbody>
             </table>
         </div>
 
+        <%- include(`partials/modalDashboardEditar`) %>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/dashboard.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,93 @@
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel"><b>Editar datos de la reserva</b></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body" id="modal-body-content">
+                <div>
+                    <form class="row g-3">
+
+                        <h5>Datos de la reserva</h5>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="numeroSolicitud">Número de solicitud</label>
+                            <input type="text" class="form-control" id="numeroSolicitud" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="fechaLlegada">Fecha de llegada</label>
+                            <input type="date" class="form-control" name="fechaLlegada" id="fechaLlegada" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="fechaSalida">Fecha de salida</label>
+                            <input type="date" class="form-control" id="fechaSalida" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="tipoHabitacion">Tipo de habitación</label>
+                            <select class="form-select" id="tipoHabitacion" required>
+                                <option>Seleccionar</option>
+                                <option>Individual ($50.000 por noche)</option>
+                                <option>Doble ($100.000 por noche)</option>
+                                <option>Suite ($250.000 por noche)</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="cantidadPersonas">Cantidad de personas</label>
+                            <select id="cantidadPersonas" class="form-select" required>
+                                <option>Seleccionar</option>
+                                <option>1 persona</option>
+                                <option>2 personas</option>
+                                <option>3 personas</option>
+                                <option>4 personas</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="cantidadPersonas">Estado de la reserva</label>
+                            <select id="estadoReserva" class="form-select" required>
+                                <option>Seleccionar</option>
+                                <option>Aceptada</option>
+                                <option>Modificada</option>
+                                <option>Rechazada</option>
+                            </select>
+                        </div>
+
+                        <h5 class="mt-4">Datos del huésped</h5>
+
+                        <div class="col-12">
+                            <label class="form-label" for="nombreCliente">Nombre/s</label>
+                            <input type="text" class="form-control" id="nombreCliente" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label" for="apellidoCliente">Apellido/s</label>
+                            <input type="text" class="form-control" id="apellidoCliente" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label" for="dniCliente">DNI</label>
+                            <input type="text" class="form-control" id="dniCliente" required>
+                            <div class="form-text">Introducir solo números sin puntos ni espacios</div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label" for="correoCliente">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correoCliente" required>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-confirmar" id="modificarDatos">Modificar datos</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
