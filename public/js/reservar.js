@@ -35,10 +35,15 @@ document.getElementById('formularioReserva').addEventListener('submit', async (e
         modalBody.innerHTML = `
                                 <div>
                                     <ul class="list-group modalTextoReserva">
-                                        <li class="alert alert-success">Tu reserva se registró correctamente.<br>Gracias por elegirnos</li>
+                                        <li class="alert alert-success">Tu reserva se registró correctamente<br>Serás redirigido al inicio en 5 segundos</li>
                                     </ul>
                                 </div>
                             `;
+
+        setTimeout(() => {
+            window.location.href = '/';
+        }, 5000);
+
     }
 
     modal.show();
