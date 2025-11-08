@@ -41,6 +41,10 @@ datosDashboard();
 
 
 // --- Listener único para editar y eliminar
+let idIconoBorrar = null;
+let modalBorrar = new bootstrap.Modal(document.getElementById('modalConfirmarBorrarDashboard'));
+
+
 document.addEventListener('click', async (e) => {
 
     // --- Editar datos
@@ -73,22 +77,31 @@ document.addEventListener('click', async (e) => {
 
     // --- Eliminar datos
     if (e.target.classList.contains('bi-trash')) {
-
-        let id = e.target.id;
-
-        let res = await fetch('/eliminarDatos', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id })
-        });
-
-        res = await res.json();
-
-        if (res.exito == true) {
-            datosDashboard();
-        }
-    }
+        idIconoBorrar = e.target.id;
+        modalBorrar.show();
+    };
 });
+
+
+
+
+
+document.getElementById(`siBorrar`).addEventListener(`click`, async () => {
+    let res = await fetch('/eliminarDatos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idIconoBorrar })
+    });
+
+    res = await res.json();
+
+    if (res.exito == true) {
+        datosDashboard();
+        modalBorrar.hide();
+        idIconoBorrar = null;
+    }
+})
+
 
 
 // --- Enviar datos modificados a la BD

@@ -143,10 +143,8 @@ app.post(`/nuevosDatos`, async (req, res) => {
 app.post(`/eliminarDatos`, async (req, res) => {
     try {
 
-        const { id } = req.body;
-
-        await conexion.query("DELETE FROM reservas WHERE id = ?", [id]);
-
+        const { idIconoBorrar } = req.body;
+        await conexion.query("DELETE FROM reservas WHERE id = ?", [idIconoBorrar]);
         res.json({ exito: true });
 
     }
