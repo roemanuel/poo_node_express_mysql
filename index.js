@@ -44,9 +44,9 @@ app.get('/reservar', (req, res) => {
 // Ruta POST para registrar una reserva
 app.post('/registrarReserva', async (req, res) => {
     try {
-        const sql = `INSERT INTO reservas (fechaLlegada, fechaSalida, tipoHabitacion, cantidadPersonas, nombreCliente, apellidoCliente, dniCliente, correoCliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+        const sql = `INSERT INTO reservas (fechaLlegada, fechaSalida, tipoHabitacion, camas, adultos, menores, nombreCliente, apellidoCliente, dniCliente, correoCliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-        await conexion.query(sql, [req.body.fechaLlegada, req.body.fechaSalida, req.body.tipoHabitacion, req.body.cantidadPersonas, req.body.nombreCliente, req.body.apellidoCliente, req.body.dniCliente, req.body.correoCliente]);
+        await conexion.query(sql, [req.body.fechaLlegada, req.body.fechaSalida, req.body.tipoHabitacion, req.body.camas, req.body.adultos, req.body.menores, req.body.nombreCliente, req.body.apellidoCliente, req.body.dniCliente, req.body.correoCliente]);
 
         res.json({ exito: true });
     } catch (err) {
@@ -128,9 +128,9 @@ app.get(`/datosDashboard`, async (req, res) => {
 app.post(`/nuevosDatos`, async (req, res) => {
     try {
 
-        const { numeroSolicitud, fechaLlegada, fechaSalida, tipoHabitacion, cantidadPersonas, nombreCliente, apellidoCliente, dniCliente, correoCliente, estadoReserva } = req.body;
+        const { numeroSolicitud, fechaLlegada, fechaSalida, tipoHabitacion, camas, adultos, menores, nombreCliente, apellidoCliente, dniCliente, correoCliente, estadoReserva } = req.body;
 
-        await conexion.query("UPDATE reservas SET fechaLlegada = ?, fechaSalida = ?, tipoHabitacion = ?, cantidadPersonas = ?, nombreCliente = ?, apellidoCliente = ?, dniCliente = ?, correoCliente = ?, estadoReserva = ? WHERE id = ?", [fechaLlegada, fechaSalida, tipoHabitacion, cantidadPersonas, nombreCliente, apellidoCliente, dniCliente, correoCliente, estadoReserva, numeroSolicitud]);
+        await conexion.query("UPDATE reservas SET fechaLlegada = ?, fechaSalida = ?, tipoHabitacion = ?, camas = ?, adultos = ?, menores = ?, nombreCliente = ?, apellidoCliente = ?, dniCliente = ?, correoCliente = ?, estadoReserva = ? WHERE id = ?", [fechaLlegada, fechaSalida, tipoHabitacion, camas, adultos, menores, nombreCliente, apellidoCliente, dniCliente, correoCliente, estadoReserva, numeroSolicitud]);
 
         res.json({ exito: true });
 

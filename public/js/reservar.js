@@ -3,7 +3,9 @@ document.getElementById('formularioReserva').addEventListener('submit', async (e
     const fechaLlegada = document.getElementById('fechaLlegada').value;
     const fechaSalida = document.getElementById('fechaSalida').value;
     const tipoHabitacion = document.getElementById('tipoHabitacion').value;
-    const cantidadPersonas = document.getElementById('cantidadPersonas').value;
+    const camas = document.getElementById('camas').value;
+    const adultos = document.getElementById('adultos').value;
+    const menores = document.getElementById('menores').value;
     const nombreCliente = document.getElementById('nombreCliente').value;
     const apellidoCliente = document.getElementById('apellidoCliente').value;
     const dniCliente = document.getElementById('dniCliente').value;
@@ -13,7 +15,9 @@ document.getElementById('formularioReserva').addEventListener('submit', async (e
         fechaLlegada: fechaLlegada,
         fechaSalida: fechaSalida,
         tipoHabitacion: tipoHabitacion,
-        cantidadPersonas: cantidadPersonas,
+        camas: camas,
+        adultos: adultos,
+        menores: menores,
         nombreCliente: nombreCliente,
         apellidoCliente: apellidoCliente,
         dniCliente: dniCliente,

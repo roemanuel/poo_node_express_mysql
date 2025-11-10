@@ -15,7 +15,9 @@ async function datosDashboard() {
                                         <td class="n${datosTabla.id}">${new Date(datosTabla.fechaLlegada).toLocaleDateString()}</td>
                                         <td class="n${datosTabla.id}">${new Date(datosTabla.fechaSalida).toLocaleDateString()}</td>
                                         <td class="n${datosTabla.id}">${datosTabla.tipoHabitacion}</td>
-                                        <td class="n${datosTabla.id}">${datosTabla.cantidadPersonas}</td>
+                                        <td class="n${datosTabla.id}">${datosTabla.camas}</td>
+                                        <td class="n${datosTabla.id}">${datosTabla.adultos}</td>
+                                        <td class="n${datosTabla.id}">${datosTabla.menores}</td>
                                         <td class="n${datosTabla.id}">${datosTabla.nombreCliente}</td>
                                         <td class="n${datosTabla.id}">${datosTabla.apellidoCliente}</td>
                                         <td class="n${datosTabla.id}">${datosTabla.dniCliente}</td>
@@ -62,12 +64,14 @@ document.addEventListener('click', async (e) => {
         document.getElementById(`fechaLlegada`).value = datosReferenciados[1];
         document.getElementById(`fechaSalida`).value = datosReferenciados[2];
         document.getElementById(`tipoHabitacion`).value = datosReferenciados[3];
-        document.getElementById(`cantidadPersonas`).value = datosReferenciados[4];
-        document.getElementById(`estadoReserva`).value = datosReferenciados[9];
-        document.getElementById(`nombreCliente`).value = datosReferenciados[5];
-        document.getElementById(`apellidoCliente`).value = datosReferenciados[6];
-        document.getElementById(`dniCliente`).value = datosReferenciados[7];
-        document.getElementById(`correoCliente`).value = datosReferenciados[8];
+        document.getElementById(`camas`).value = datosReferenciados[4];
+        document.getElementById(`adultos`).value = datosReferenciados[5];
+        document.getElementById(`menores`).value = datosReferenciados[6];
+        document.getElementById(`estadoReserva`).value = datosReferenciados[11];
+        document.getElementById(`nombreCliente`).value = datosReferenciados[7];
+        document.getElementById(`apellidoCliente`).value = datosReferenciados[8];
+        document.getElementById(`dniCliente`).value = datosReferenciados[9];
+        document.getElementById(`correoCliente`).value = datosReferenciados[10];
 
         let modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
         modal.show();
@@ -112,7 +116,9 @@ document.getElementById('modificarDatos').addEventListener('click', async (e) =>
     let valorFechaLlegadaNuevo = document.getElementById(`fechaLlegada`).value;
     let valorFechaSalidaNuevo = document.getElementById(`fechaSalida`).value;
     let valorTipoHabitacionNuevo = document.getElementById(`tipoHabitacion`).value;
-    let valorCantidadPersonasNuevo = document.getElementById(`cantidadPersonas`).value;
+    let valorCamasNuevo = document.getElementById(`camas`).value;
+    let valorAdultosNuevo = document.getElementById(`adultos`).value;
+    let valorMenoresNuevo = document.getElementById(`menores`).value;
     let valorNombreClienteNuevo = document.getElementById(`nombreCliente`).value;
     let valorApellidoClienteNuevo = document.getElementById(`apellidoCliente`).value;
     let valorDniClienteNuevo = document.getElementById(`dniCliente`).value;
@@ -124,7 +130,9 @@ document.getElementById('modificarDatos').addEventListener('click', async (e) =>
         fechaLlegada: valorFechaLlegadaNuevo,
         fechaSalida: valorFechaSalidaNuevo,
         tipoHabitacion: valorTipoHabitacionNuevo,
-        cantidadPersonas: valorCantidadPersonasNuevo,
+        camas: valorCamasNuevo,
+        adultos: valorAdultosNuevo,
+        menores: valorMenoresNuevo,
         nombreCliente: valorNombreClienteNuevo,
         apellidoCliente: valorApellidoClienteNuevo,
         dniCliente: valorDniClienteNuevo,
