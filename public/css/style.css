@@ -23,10 +23,6 @@ body {
     text-decoration: none;
 }
 
-.navbar-brand:hover {
-    color: white !important;
-}
-
 .navbar-brand {
     font-size: 2rem;
     font-family: 'Playfair Display', serif;
@@ -38,7 +34,7 @@ body {
 .nav-link:hover,
 .nav-link:focus,
 .nav-link:active {
-    color: #E1A43B;
+    color: white;
     text-decoration: none;
     background: none;
     outline: none;
