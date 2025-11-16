@@ -31,47 +31,48 @@
 
                 <div class="col-md-6">
                     <label class="form-label" for="fechaSalida">Fecha de salida</label>
-                    <input type="date" class="form-control" id="fechaSalida" required>
+                    <input type="date" class="form-control" name="fechaSalida" id="fechaSalida" required>
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label" for="tipoHabitacion">Tipo de habitación</label>
-                    <select class="form-select" id="tipoHabitacion" required>
-                        <option>Seleccionar</option>
-                        <option>Individual ($50.000 por noche)</option>
-                        <option>Doble ($100.000 por noche)</option>
-                        <option>Suite ($250.000 por noche)</option>
+                    <select class="form-select" id="tipoHabitacion" name="tipoHabitacion" required>
+                        <option value="">Seleccionar</option>
+                        <option value="Individual ($50.000 por noche)">Individual ($50.000 por noche)</option>
+                        <option value="Doble ($100.000 por noche)">Doble ($100.000 por noche)</option>
+                        <option value="Suite ($250.000 por noche)">Suite ($250.000 por noche)</option>
                     </select>
                 </div>
 
                 <div class="col-md-6">
-                    <label class="form-label" for="camas">Camas</label>
-                    <select class="form-select" id="camas" required>
-                        <option>Seleccionar</option>
-                        <option>Matrimonial</option>
-                        <option>Twins</option>
+                    <label class="form-label" for="camas">Cama</label>
+                    <select class="form-select" id="camas" name="Camas" required>
+                        <option value="">Seleccionar</option>
+                        <option value="Matrimonial">Matrimonial</option>
+                        <option value="Twins">Twins</option>
                     </select>
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label" for="adultos">Adultos</label>
-                    <select id="adultos" class="form-select" required>
-                        <option>Seleccionar</option>
-                        <option>1 adulto</option>
-                        <option>2 adultos</option>
-                        <option>3 adultos</option>
-                        <option>4 adultos</option>
+                    <select id="adultos" class="form-select" name="Adultos" required>
+                        <option value="">Seleccionar</option>
+                        <option value="1 adulto">1 adulto</option>
+                        <option value="2 adultos">2 adultos</option>
+                        <option value="3 adultos">3 adultos</option>
+                        <option value="4 adultos">4 adultos</option>
                     </select>
                 </div>
+
                 <div class="col-md-6">
                     <label class="form-label" for="menores">Menores</label>
-                    <select id="menores" class="form-select" required>
-                        <option>Seleccionar</option>
-                        <option>Ninguno</option>
-                        <option>1 menor</option>
-                        <option>2 menores</option>
-                        <option>3 menores</option>
-                        <option>4 menores</option>
+                    <select id="menores" class="form-select" name="Menores" required>
+                        <option value="">Seleccionar</option>
+                        <option value="Ninguno">Ninguno</option>
+                        <option value="1 menor">1 menor</option>
+                        <option value="2 menores">2 menores</option>
+                        <option value="3 menores">3 menores</option>
+                        <option value="4 menores">4 menores</option>
                     </select>
                 </div>
 
@@ -79,23 +80,23 @@
 
                 <div class="col-12">
                     <label class="form-label" for="nombreCliente">Nombre/s</label>
-                    <input type="text" class="form-control" id="nombreCliente" required>
+                    <input type="text" class="form-control" id="nombreCliente" name="nombreCliente" required>
                 </div>
 
                 <div class="col-12">
                     <label class="form-label" for="apellidoCliente">Apellido/s</label>
-                    <input type="text" class="form-control" id="apellidoCliente" required>
+                    <input type="text" class="form-control" id="apellidoCliente" name="apellidoCliente" required>
                 </div>
 
                 <div class="col-12">
                     <label class="form-label" for="dniCliente">DNI</label>
-                    <input type="text" class="form-control" id="dniCliente" required>
+                    <input type="text" class="form-control" id="dniCliente" name="dniCliente" required>
                     <div class="form-text">Introducir solo números sin puntos ni espacios</div>
                 </div>
 
                 <div class="col-12">
                     <label class="form-label" for="correoCliente">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correoCliente" required>
+                    <input type="email" class="form-control" id="correoCliente" name="correoCliente" required>
                 </div>
 
                 <div class="col-12">
@@ -104,6 +105,7 @@
 
             </form>
         </div>
+
 
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"

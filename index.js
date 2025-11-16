@@ -125,6 +125,24 @@ app.get(`/datosDashboard`, async (req, res) => {
     }
 });
 
+app.post(`/editarDatos`, async (req, res) => {
+    try {
+
+        const { idEditar } = req.body;
+
+        let resultados = await conexion.query('SELECT * FROM reservas WHERE id = ?', [idEditar]);
+
+        if (resultados) {
+            res.json({ exito: true, info: resultados[0][0] });
+        } else {
+            res.json({ exito: false });
+        }
+    }
+    catch (err) {
+        console.error(`Error en editarDatos ${err}`);
+    }
+});
+
 app.post(`/nuevosDatos`, async (req, res) => {
     try {
 

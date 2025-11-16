@@ -286,18 +286,28 @@ table,
 th {
     text-align: center;
     align-content: center;
-
 }
 
 td {
     align-content: center;
+    white-space: nowrap;
 }
 
-.accionesTabla i:first-child {
+.accionesTabla i:is(:first-child, :nth-child(2)) {
     margin-right: 1rem;
 }
 
+.estadoAceptada {
+    background-color: rgba(21, 255, 0, 0.24) !important;
+}
 
+.estadoModificada {
+    background-color: rgba(255, 238, 0, 0.24) !important;
+}
+
+.estadoRechazada {
+    background-color: rgba(255, 0, 0, 0.24) !important;
+}
 
 .accionesTabla i {
     font-size: 1.1rem;

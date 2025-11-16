@@ -21,19 +21,19 @@ document.getElementById('formReserva').addEventListener('submit', async (e) => {
                                         <li class="list-group-item"><b>DNI:</b> ${rtaServidor.info.dniCliente}</li>
                                         <li class="list-group-item"><b>Correo:</b> ${rtaServidor.info.correoCliente}</li>
                                         <li class="list-group-item"><b>Tipo de habitación:</b> ${rtaServidor.info.tipoHabitacion}</li>
-                                        <li class="list-group-item"><b>Camas:</b> ${rtaServidor.info.camas}</li>
+                                        <li class="list-group-item"><b>Cama:</b> ${rtaServidor.info.camas}</li>
                                         <li class="list-group-item"><b>Adultos:</b> ${rtaServidor.info.adultos}</li>
                                         <li class="list-group-item"><b>Menores:</b> ${rtaServidor.info.menores}</li>
                                         <li class="list-group-item"><b>Fecha de llegada:</b> ${new Date(rtaServidor.info.fechaLlegada).toLocaleDateString()}</li>
                                         <li class="list-group-item"><b>Fecha de salida:</b> ${new Date(rtaServidor.info.fechaSalida).toLocaleDateString()}</li>
-                                        <li class="list-group-item"><b>Estado de la reserva:</b> ${rtaServidor.info.estadoReserva}</li>
+                                        <li class="list-group-item estado${rtaServidor.info.estadoReserva}"><b>Estado de la reserva:</b> ${rtaServidor.info.estadoReserva}</li>
                                     </ul>
                                 </div>
                             `;
     } else {
         modalBody.innerHTML = `
                                 <div class="alert alert-danger mt-3">No se encontró ninguna reserva con ese DNI</div>
-                             `;
+                            `;
     }
 
     modal.show();

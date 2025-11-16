@@ -21,16 +21,12 @@
         </div>
 
         <div class="mt-5 table-responsive-xxl divTablaDashboard ">
-            <table class="table table-hover align-middle table-striped table-bordered">
+            <table class="table table-hover align-middle table-bordered">
                 <thead class="table-light">
                     <tr>
                         <th scope="col">Número de solicitud</th>
                         <th scope="col">Fecha de llegada</th>
                         <th scope="col">Fecha de salida</th>
-                        <th scope="col">Tipo de habitación</th>
-                        <th scope="col">Camas</th>
-                        <th scope="col">Adultos</th>
-                        <th scope="col">Menores</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">DNI</th>
@@ -40,17 +36,19 @@
                     </tr>
                 </thead>
                 <tbody class="table-group-divider datosBD">
-                <%# Acá se ponen los datos de forma dinámica traidos de la BD %>
+                    <%# Acá se ponen los datos de forma dinámica traidos de la BD %>
                 </tbody>
             </table>
         </div>
 
-        <%- include(`partials/modalDashboardEditar`) %>
+        <%- include(`partials/modalDashboardVerDatos`) %>
 
-        <%- include(`partials/modalConfirmarBorrarDashboard`) %>
+            <%- include(`partials/modalDashboardEditar`) %>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/dashboard.js"></script>
+                <%- include(`partials/modalConfirmarBorrarDashboard`) %>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+                    <script src="js/dashboard.js"></script>
 </body>
 
 </html>
