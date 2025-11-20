@@ -1,7 +1,9 @@
 // Importo los módulos Express y MySQL (versión con promesas)
 const express = require('express');
+const session = require('express-session');
 const mysql = require('mysql2/promise');
 const app = express();
+
 
 // Configuro Express para usar EJS como motor de plantillas
 app.set('view engine', 'ejs');
@@ -18,7 +20,12 @@ const conexion = mysql.createPool({
     host: 'mysql-emanuel.alwaysdata.net',
     user: 'emanuel',
     password: 'nHeGtgSMYTywg6AVj@BFd0TVhut*YM',
-    database: 'emanuel_hotel'
+    database: 'emanuel_hotel',
+    waitForConnections: true,
+    connectionLimit: 5,
+    queueLimit: 0,
+    enableKeepAlive: true,
+    keepAliveInitialDelay: 0
 });
 
 // Función para verificar la conexión
@@ -31,6 +38,19 @@ const conexion = mysql.createPool({
         console.error(`❌ Error en la conexión: ${err}`);
     }
 })();
+
+// Configuración de la sesión de Express
+app.use(session({
+    secret: "prueba123",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: true,
+        httpOnly: true,
+        sameSite: 'lax',
+        maxAge: 1000 * 60 * 30
+    }
+}));
 
 // Rutas principales
 app.get('/', (req, res) => {
@@ -93,6 +113,8 @@ app.post(`/consultarAdministrador`, async (req, res) => {
         respuestaBD = respuestaBD[0][0];
 
         if (respuestaBD && respuestaBD.correoAdministrador == correoAdministrador && respuestaBD.passwordAdministrador == passwordAdministrador) {
+            req.session.user = true;
+
             res.json({ exito: true });
         } else {
             res.json({ exito: false });
@@ -105,7 +127,11 @@ app.post(`/consultarAdministrador`, async (req, res) => {
 });
 
 app.get('/dashboard', (req, res) => {
-    res.render('dashboard');
+    if (!req.session.user) {
+        return res.redirect('/iniciarSesion');
+    } else {
+        res.render('dashboard');
+    }
 });
 
 app.get(`/datosDashboard`, async (req, res) => {
@@ -169,6 +195,19 @@ app.post(`/eliminarDatos`, async (req, res) => {
     catch (err) {
         console.error(`Error en eliminarDatos ${err}`);
     }
+});
+
+app.get('/cerrarSesion', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            console.log('Error al destruir la sesión:', err);
+            res.clearCookie('connect.sid');
+            return res.redirect('/');
+        } else {
+            res.clearCookie('connect.sid');
+            return res.redirect('/');
+        }
+    });
 });
 
 // Inicio el servidor en el puerto 3000

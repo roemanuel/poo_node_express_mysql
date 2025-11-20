@@ -26,7 +26,7 @@ document.getElementById('formInicioSesion').addEventListener('submit', async (e)
     } else {
         modalBody.innerHTML = `
                                 <div class="alert alert-danger mt-3">Los datos introducidos son incorrectos</div>
-                             `;
+                                `;
 
         modal.show();
     }
